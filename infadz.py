@@ -1,24 +1,30 @@
 import tkinter as tk
-import random
-
-colors = ['red', 'blue', 'green', 'orange', 'purple', 'yellow']
-
-def change_border():
-    color = random.choice(colors)
-    frame.config(bg=color)
-
-def exit_app():
-    root.destroy()
 
 root = tk.Tk()
+root.title("My program")
+root.geometry("400x300")
+root.configure(bg="white")
 
-frame = tk.Frame(root, bg='black', padx=4, pady=4)
-frame.pack(pady=20)
+label = tk.Label(
+    root,
+    text="Welcome",
+    bg="#7cd964",  
+    fg="white",
+    font=("Arial", 30, "bold"),
+    width=15,
+    height=3
+)
+label.pack(pady=10)
 
-button = tk.Button(frame, text="Змінити рамку", command=change_border)
-button.pack()
-
-exit_button = tk.Button(root, text="Вихід", command=exit_app)
-exit_button.pack(pady=10)
+button = tk.Button(
+    root,
+    text="Тиць!",
+    bg="#4fc3f7", 
+    fg="white",
+    font=("Arial", 20, "bold"),
+    width=10,
+    height=2
+)
+button.pack(pady=10)
 
 root.mainloop()
